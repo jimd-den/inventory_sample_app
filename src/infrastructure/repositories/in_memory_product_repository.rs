@@ -1,7 +1,7 @@
 use std::collections::HashMap; 
 use std::sync::{Arc, RwLock};
 use crate::core::entities::product::Product;
-use crate::core::product_repository::ProductRepository;
+use crate::core::repositories::product_repository::ProductRepository;
 use uuid::Uuid;
 
 
@@ -11,7 +11,7 @@ pub struct InMemoryProductRepository {
 }
 
 //inMemoryProductRepository implements the ProductRepository trait.
-impl inMemoryProductRepository {
+impl InMemoryProductRepository {
     pub fn new() -> Self {
             Self {
                 storage: Arc::new(RwLock::new(HashMap::new())),
@@ -20,12 +20,12 @@ impl inMemoryProductRepository {
 }
 
 //inMemoryProductRepository implements the ProductRepository trait.
-#[async_trait]
-impl ProductRepository for inMemoryProductRepository {
+
+impl ProductRepository for InMemoryProductRepository {
     //this method creates a product and stores it in the HashMap storage.
-    async fn create_product(&self, product: Product) -> Result<()> {
+    fn create_product(&self, product: Product) -> Product {
         let mut storage = self.storage.write().unwrap();
-        storage.insert(product.id, product);
+        storage.insert(uuid, product);
         Ok(())
     }
 }

@@ -1,43 +1,12 @@
-//This is a simple command line app for logging inventory
-use std::io;
-use std::env;
+mod core;
+mod infrastructure;
 
- 
 
-fn add_item(args: Vec<String>) {
- 
-    let item_name = args_1;
-    let item_quantity = args_2;
-    let item_location = args_3;
-}
-
-fn remove_item(args: Vec<String>) {
-    let item_name = args_1;
-    let item_quantity = args_2;
-    let item_location = args_3;
-}
-
-fn list_items(args: Vec<String>) {
-    
-}
-
-fn help() {
-    dbg!("Help");
-}
-
-fn arg_selector(selector_name: &str, args: Vec<String>) {
-    match selector_name {
-        "--add" => add_item(args), 
-        "--remove" => remove_item(args),
-        "--list" => list_items(args),
-        "--help" => help(),
-        _ => println!("Invalid selector. Please use --help for more information"),
-
-    }
-}
-
+use crate::core::entities::product::Product;
+use crate::core::repositories::product_repository::ProductRepository;
+use crate::core::use_cases::product_add::AddProduct;
+use infrastructure::repositories::product_repository;
 
 fn main() {
-   let args: Vec<String> = env::args().collect(); 
-   arg_selector(&args[1], args[2..].to_vec());
+
 }

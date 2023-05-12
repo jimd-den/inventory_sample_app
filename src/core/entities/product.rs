@@ -9,9 +9,9 @@ pub struct Product {
 }
 
 impl Product {
-    pub fn new(product_id: Uuid, name: String, product_sku: String, quantity: i32, min_required: i32) -> Self {
+    pub fn new(product_uuid: Uuid, name: String, product_sku: String, quantity: i32, min_required: i32) -> Self {
         Product {
-            product_id,
+            product_uuid,
             name,
             product_sku,
             quantity,
