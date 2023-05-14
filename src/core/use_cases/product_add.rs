@@ -2,7 +2,7 @@ use crate::core::entities::product::Product;
 use crate::core::repositories::product_repository::ProductRepository;
 
 pub trait AddProduct {
-    fn add_product(&self, product: Product) -> Result<(), String>;
+    fn execute(&self, product: Product) -> Result<(), String>;
 }
 
 pub struct AddProductUseCase<R: ProductRepository> {
@@ -18,7 +18,7 @@ impl<R: ProductRepository> AddProductUseCase<R> {
 }
 
 impl <R: ProductRepository> AddProduct for AddProductUseCase<R> {
-    fn add_product(&self, product: Product) -> Result<(), String> {
+    fn execute(&self, product: Product) -> Result<(), String> {
         self.repository.create_product(product);
         Ok(())
     }
