@@ -1,0 +1,14 @@
+/workspaces/inventory_sample_app/target/debug/deps/uuid-9f3e7141015d2c17.rmeta: /home/codespace/.cargo/registry/src/github.com-1ecc6299db9ec823/uuid-1.3.2/src/lib.rs /home/codespace/.cargo/registry/src/github.com-1ecc6299db9ec823/uuid-1.3.2/src/builder.rs /home/codespace/.cargo/registry/src/github.com-1ecc6299db9ec823/uuid-1.3.2/src/error.rs /home/codespace/.cargo/registry/src/github.com-1ecc6299db9ec823/uuid-1.3.2/src/parser.rs /home/codespace/.cargo/registry/src/github.com-1ecc6299db9ec823/uuid-1.3.2/src/fmt.rs /home/codespace/.cargo/registry/src/github.com-1ecc6299db9ec823/uuid-1.3.2/src/timestamp.rs /home/codespace/.cargo/registry/src/github.com-1ecc6299db9ec823/uuid-1.3.2/src/v4.rs /home/codespace/.cargo/registry/src/github.com-1ecc6299db9ec823/uuid-1.3.2/src/rng.rs /home/codespace/.cargo/registry/src/github.com-1ecc6299db9ec823/uuid-1.3.2/src/external.rs /home/codespace/.cargo/registry/src/github.com-1ecc6299db9ec823/uuid-1.3.2/src/macros.rs
+
+/workspaces/inventory_sample_app/target/debug/deps/uuid-9f3e7141015d2c17.d: /home/codespace/.cargo/registry/src/github.com-1ecc6299db9ec823/uuid-1.3.2/src/lib.rs /home/codespace/.cargo/registry/src/github.com-1ecc6299db9ec823/uuid-1.3.2/src/builder.rs /home/codespace/.cargo/registry/src/github.com-1ecc6299db9ec823/uuid-1.3.2/src/error.rs /home/codespace/.cargo/registry/src/github.com-1ecc6299db9ec823/uuid-1.3.2/src/parser.rs /home/codespace/.cargo/registry/src/github.com-1ecc6299db9ec823/uuid-1.3.2/src/fmt.rs /home/codespace/.cargo/registry/src/github.com-1ecc6299db9ec823/uuid-1.3.2/src/timestamp.rs /home/codespace/.cargo/registry/src/github.com-1ecc6299db9ec823/uuid-1.3.2/src/v4.rs /home/codespace/.cargo/registry/src/github.com-1ecc6299db9ec823/uuid-1.3.2/src/rng.rs /home/codespace/.cargo/registry/src/github.com-1ecc6299db9ec823/uuid-1.3.2/src/external.rs /home/codespace/.cargo/registry/src/github.com-1ecc6299db9ec823/uuid-1.3.2/src/macros.rs
+
+/home/codespace/.cargo/registry/src/github.com-1ecc6299db9ec823/uuid-1.3.2/src/lib.rs:
+/home/codespace/.cargo/registry/src/github.com-1ecc6299db9ec823/uuid-1.3.2/src/builder.rs:
+/home/codespace/.cargo/registry/src/github.com-1ecc6299db9ec823/uuid-1.3.2/src/error.rs:
+/home/codespace/.cargo/registry/src/github.com-1ecc6299db9ec823/uuid-1.3.2/src/parser.rs:
+/home/codespace/.cargo/registry/src/github.com-1ecc6299db9ec823/uuid-1.3.2/src/fmt.rs:
+/home/codespace/.cargo/registry/src/github.com-1ecc6299db9ec823/uuid-1.3.2/src/timestamp.rs:
+/home/codespace/.cargo/registry/src/github.com-1ecc6299db9ec823/uuid-1.3.2/src/v4.rs:
+/home/codespace/.cargo/registry/src/github.com-1ecc6299db9ec823/uuid-1.3.2/src/rng.rs:
+/home/codespace/.cargo/registry/src/github.com-1ecc6299db9ec823/uuid-1.3.2/src/external.rs:
+/home/codespace/.cargo/registry/src/github.com-1ecc6299db9ec823/uuid-1.3.2/src/macros.rs:

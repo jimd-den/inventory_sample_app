@@ -25,8 +25,9 @@ impl ProductRepository for InMemoryProductRepository {
     //this method creates a product and stores it in the HashMap storage.
     fn create_product(&self, product: Product) -> Product {
         let mut storage = self.storage.write().unwrap();
-        storage.insert(uuid, product);
-        Ok(())
+        let uuid = Uuid::new_v4();
+        storage.insert(uuid, product.clone());
+        product
     }
 }
 
