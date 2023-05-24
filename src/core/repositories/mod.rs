@@ -1,1 +1,1 @@
-pub mod assetrepository;
+pub mod asset_repository;
