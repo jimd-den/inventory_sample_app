@@ -6,16 +6,17 @@ use uuid::Uuid;
 use std::time::{SystemTime, UNIX_EPOCH};
 
 #[test]
-fn can_add_product() {
+fn can_add_asset() {
     let mut repo = InMemoryAssetRepository::new();
     let mut add_asset_use_case = AddAssetUseCase::new(&mut repo);
-    let id = Uuid::new_v4();    
-    let name =  String::from("Asset 1");
-    let sku = String::from("SKU-1");
-    let date = SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_secs().to_string();
 
-    let asset = Asset::new(id, name, sku, date);
-    add_asset_use_case.execute(asset.id, asset.name, asset.sku, asset.date_created);
+    let asset = Asset::new(
+        uuid::Uuid::new_v4(),
+        "Asset 1".to_string(),
+        "SKU-1".to_string(),
+        SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_secs().to_string());
+
+    add_asset_use_case.execute(asset);
     println!("HashMap: {:?}", repo.get_all_assets());
-
 }
+

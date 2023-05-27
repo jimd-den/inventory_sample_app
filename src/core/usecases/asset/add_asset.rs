@@ -11,8 +11,7 @@ impl< 'a> AddAssetUseCase<'a> {
         Self { repository }
     }
 
-    pub fn execute(&mut self, id: Uuid, name: String, sku:String, date_created: String) -> Result<(), Box<(dyn std::error::Error)>> {
-        let asset = Asset::new(id, name, sku, date_created);
+    pub fn execute(&mut self, asset: Asset) -> Result<(), Box<(dyn std::error::Error)>> {
         self.repository.create_asset(asset)
     }
 }
