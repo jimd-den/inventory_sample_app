@@ -12,8 +12,7 @@ impl< 'a> AddTransaction<'a > {
         Self { repository }
     }
 
-    pub fn execute(&mut self, id: u32, date_time: String, quantity: u32, asset_id: Uuid, asset_sku: String) -> Result<(), Box<(dyn std::error::Error)>> {
-        let transaction = Transaction::new(id, date_time, quantity, asset_id, asset_sku);
+    pub fn execute(&mut self, Transaction) -> Result<(), Box<(dyn std::error::Error)>> {
         self.repository.create_transaction(transaction)
     }
 
