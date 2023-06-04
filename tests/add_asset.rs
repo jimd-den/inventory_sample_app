@@ -1,7 +1,7 @@
 use inv_tdd::core::entities::asset::Asset;
 use inv_tdd::core::repositories::asset_repository::AssetRepository;
 use inv_tdd::core::usecases::asset::add_asset::AddAssetUseCase;
-use inv_tdd::infrastructure::repositories::in_memory_asset_repository::InMemoryAssetRepository;
+use inv_tdd::infrastructure::repositories::in_memory::in_memory_asset_repository::InMemoryAssetRepository;
 use std::time::{SystemTime, UNIX_EPOCH};
 use uuid::Uuid;
 

@@ -1,7 +1,11 @@
 use inv_tdd::core::entities::asset::Asset;
 use inv_tdd::core::repositories::asset_repository::AssetRepository;
 use inv_tdd::core::usecases::asset::add_asset::AddAssetUseCase;
-use inv_tdd::infrastructure::repositories::in_memory_asset_repository::InMemoryAssetRepository;
+use inv_tdd::core::entities::transaction::Transaction;
+use inv_tdd::core::repositories::transaction_repository::TransactionRepository;
+use inv_tdd::core::usecases::transaction::add_transaction::AddTransactionUseCase;
+use inv_tdd::infrastructure::repositories::in_memory::in_memory_asset_repository::InMemoryAssetRepository;
+use inv_tdd::infrastructure::repositories::in_memory::in_memory_transaction_repository::InMemoryTransactionRepository;
 use std::env;
 use std::time::{SystemTime, UNIX_EPOCH};
 use uuid::Uuid;
@@ -62,7 +66,14 @@ fn add_item_ui() {
     println!("##Item Added##\n");
 }
 
-fn add_transaction_ui() {}
+fn add_transaction_ui() {
+    let mut repo = InMemoryTransactionRepository::new();
+    let mut add_transaction_use_case = AddTransactionUseCase::new(&mut repo);
+
+    let mut asset_id = String::new();
+    
+
+}
 
 fn view_transactions_ui() {}
 
