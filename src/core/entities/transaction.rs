@@ -18,5 +18,5 @@ impl Transaction {
             asset_id,
             asset_sku,
         }
-    }   
+    }
 }
