@@ -4,12 +4,13 @@ use inv_tdd::core::usecases::asset::add_asset::AddAssetUseCase;
 use inv_tdd::core::entities::transaction::Transaction;
 use inv_tdd::core::repositories::transaction_repository::TransactionRepository;
 use inv_tdd::core::usecases::transaction::add_transaction::AddTransactionUseCase;
-use inv_tdd::infrastructure::repositories::in_memory::in_memory_asset_repository::InMemoryAssetRepository;
 use inv_tdd::infrastructure::repositories::in_memory::in_memory_transaction_repository::InMemoryTransactionRepository;
 use std::env;
 use std::time::{SystemTime, UNIX_EPOCH};
 use uuid::Uuid;
+use inv_tdd::utils::{generate_uuid, cmd_prompt};
 mod core;
+
 
 fn run_menu_ui() {
     println!("Inventory App");
@@ -38,22 +39,23 @@ fn run_menu_ui() {
 }
 
 fn add_item_ui() {
-    let mut repo = InMemoryAssetRepository::new();
+    let mut repo = inv_tdd
+                    ::infrastructure
+                    ::repositories
+                    ::in_memory
+                    ::in_memory_asset_repository::InMemoryAssetRepository::new();
+    
     let mut add_asset_use_case = AddAssetUseCase::new(&mut repo);
 
     let mut name = String::new();
     let mut sku = String::new();
-    let uuid = Uuid::new_v4();
-    let timestamp = SystemTime::now()
-        .duration_since(UNIX_EPOCH)
-        .unwrap_or_else(|_| panic!("SystemTime before UNIX EPOCH!"))
-        .as_secs()
-        .to_string();
+    let uuid = generate_uuid();
+    let timestamp = inv_tdd::utils::get_current_unix_timestamp().to_string();
 
-    println!("Enter Name: ");
-    std::io::stdin().read_line(&mut name).expect("Failed to read input");
-    println!("Enter SKU: ");
-    std::io::stdin().read_line(&mut sku).expect("Failed to read input");
+
+    name = inv_tdd::utils::cmd_prompt("Enter Name: ");
+    sku = inv_tdd::utils::cmd_prompt("Enter SKU: ");
+    
     println!("UUID: {}", uuid);
     println!("Timestamp: {}\n", timestamp);
     let asset = Asset::new(
@@ -62,7 +64,9 @@ fn add_item_ui() {
         sku.trim().to_string(),
         timestamp.parse().expect("Failed to parse timestamp"),
     );
+
     add_asset_use_case.execute(asset);
+
     println!("##Item Added##\n");
 }
 
